@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dester Ngouateu{% endblock %}
+
+{% block body_class %}index-page{% endblock %}
+
+{% block main %}
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+
+    <!-- <img src="{% static 'assets/img/background.webp' %}" alt="" data-aos="fade-in"> -->
+
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h2>Dester Ngouateu</h2>
+      <p>Ich bin <span class="typed" data-typed-items="Informatik Student, Softwareentwickler, Server Administrator"></span><span class="typed-cursor typed-cursor--blink"></span></p>
+      <div class="social-links">
+        <a href="https://twitter.com/dester_kemma"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/thebizmaker/projects"><i class="bi bi-github"></i></a>
+        <a href="https://instagram.com/dester.kemma"><i class="bi bi-instagram"></i></a>
+        <a href="https://linkedin.com/in/thebizmaker"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </section><!-- /Hero Section -->
+{% endblock %}

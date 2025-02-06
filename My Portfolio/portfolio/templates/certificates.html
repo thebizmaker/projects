@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dester - Certificates{% endblock %}
+
+{% block body_class %}services-page{% endblock %}
+
+{% block main %}
+
+<!-- Certificate Section -->
+<section id="services" class="services section">
+
+<div class="container">
+
+  <div class="section-title " data-aos="fade-up">
+    <h2>Certificates</h2>
+  <div><span class="description-title">Zertifikate 🎓</span></div>
+  <p>Einige im Onlinekursen erworbene Zertifikate</p>
+  </div>
+
+  <div class="row gy-4">
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item  position-relative">
+        <a href="https://cs50.harvard.edu/certificates/bd43ded5-b2a7-42bc-82b6-d4a862047675" target="_blank" class="stretched-link">
+          <img src="{% static 'img/certificates/CS50P.png' %}" alt="Harvard-CS50-Python" class="icon">
+        </a>
+        <h3>Python Basics - Harvard-CS50</h3>
+      </div>
+    </div><!-- End Certificate Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item  position-relative">
+        <a href="https://learn.saylor.org/admin/tool/certificate/index.php?code=9051575248AN" target="_blank" class="stretched-link">
+          <img src="{% static 'img/certificates/CPP.png' %}" alt="C++" class="icon">
+        </a>
+        <h3>C++ - Saylor</h3>
+      </div>
+    </div><!-- End Certificate Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item  position-relative">
+        <a href="https://hackerrank.com/certificates/cc73dc344b5b" target="_blank" class="stretched-link">
+          <img src="{% static 'img/certificates/hackerrank_py.png' %}" alt="Python Basics" class="icon">
+        </a>
+        <h3>Python Basics - Hackerrank</h3>
+      </div>
+    </div><!-- End Certificate Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item  position-relative">
+        <a href="https://www.hackerrank.com/certificates/fed0f2ca5e13" target="_blank" class="stretched-link">
+          <img src="{% static 'img/certificates/hackerrank_js.png' %}" alt="JS Basics" class="icon">
+        </a>
+        <h3>JS Basics - Hackerrank</h3>
+      </div>
+    </div><!-- End Certificate Item -->
+    
+  </div>
+
+</div>
+
+</section><!-- /Certificate Section -->
+{% endblock %}

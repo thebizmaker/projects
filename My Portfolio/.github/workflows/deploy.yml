@@ -1,0 +1,67 @@
+name: Docker CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build-and-Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_ACTOR }}
+          password: ${{ secrets.GHCR_PSSWD }}
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/ich_habe_versteckt:latest .
+          docker push ghcr.io/${{ github.repository }}/ich_habe_versteckt:latest
+
+  deploy:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Pull and Deploy Container
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            # Pull the latest image from GHCR
+            docker login ghcr.io -u ${{ secrets.GHCR_ACTOR }} -p ${{ secrets.GHCR_PSSWD }}
+            docker pull ghcr.io/${{ github.repository }}/ich_habe_versteckt:latest
+
+            # Stop and remove the old container
+            docker stop ich_habe_versteckt || echo "Container not running"
+            docker rm ich_habe_versteckt || echo "Container not found"
+
+            # Run the new container
+            docker run -d --name ich_habe_versteckt -p 8080:8080 \
+            -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} \
+            -e DB_NAME=${{ secrets.DB_NAME }} \
+            -e DB_USER=${{ secrets.DB_USER }} \
+            -e DB_HOST=${{ secrets.DB_HOST }} \
+            -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
+            -e CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }} \
+            -e EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }} \
+            ghcr.io/${{ github.repository }}/ich_habe_versteckt:latest
+
+            # Clean up dangling images
+            docker image prune -f || echo "No dangling images to clean up"
+          EOF
+

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dester - Portfolio{% endblock %}
+
+{% block body_class %}portfolio-page{% endblock %}
+
+{% block main %}
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio section">
+
+    <div class="container">
+
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+        <div class="section-title " data-aos="fade-up">
+          <h2>Portfolio</h2>
+        <div><span class="description-title">Meine werke 💻</span></div>
+        </div>
+        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-cpp">C++</li>
+          <li data-filter=".filter-python">Python</li>
+          <li data-filter=".filter-htmlcss">HTML & CSS</li>
+          <li data-filter=".filter-php">PHP</li>
+          <li data-filter=".filter-js">JS</li>
+          <li data-filter=".filter-django">Django</li>
+          <li data-filter=".filter-react">React</li>
+          <li data-filter=".filter-java">Java</li>
+          <li data-filter=".filter-spring">Spring Boot</li>
+        </ul><!-- End Portfolio Filters -->
+
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          {% for project in projects %}
+          {% for image in project.get_images %}
+          {% if forloop.counter <= 2 %}
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item
+          {% if 'C++' in project.technologies %} filter-cpp {% endif %}
+          {% if 'Python' in project.technologies %} filter-python {% endif %}
+          {% if 'HTML' in project.technologies %} filter-htmlcss {% endif %}
+          {% if 'PHP' in project.technologies %} filter-php {% endif %}
+          {% if 'JavaScript' in project.technologies %} filter-js {% endif %}
+          {% if 'Django' in project.technologies %} filter-django {% endif %}
+          {% if 'React' in project.technologies %} filter-react {% endif %}
+          {% if 'Java,' in project.technologies %} filter-java {% endif %}
+          {% if 'Spring Boot' in project.technologies %} filter-spring {% endif %}
+          ">
+            <div class="portfolio-content h-100">
+              <img src="{% static image %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ project.category }}</h4>
+                <p>{{ project.title }}</p>
+                <a href="{% static image %}" title="{{ project.title }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'project' project.id %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+
+        </div><!-- End Portfolio Container -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Portfolio Section -->
+{% endblock %}

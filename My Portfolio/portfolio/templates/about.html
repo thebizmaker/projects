@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dester - About Me{% endblock %}
+
+{% block body_class %}about-page{% endblock %}
+
+{% block main %}
+  <!-- About Section -->
+  <section id="about" class="about section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4 justify-content-center">
+        <div class="container section-title ueber-mich2" data-aos="fade-up">
+          <h2>About me</h2>
+        <div><span class="description-title">mehr über mich 🤔</span></div>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="{% static 'img/about2.jpg' %}" class="img-fluid img-cv" alt="">
+        </div>
+        <div class="col-lg-8 content">
+          <h2>Student an der Hochschule Darmstadt</h2>
+          <p class="fst-italic py-3">
+            Ich bin ein begeisterter Informatikstudent, der auf der Suche nach einem Werkstudent ist, um Erfahrung zu sammeln und nebenbei etwas Geld zu verdienen.
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong> <span>Dester Ngouateu</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Wohnort:</strong> <span>Darmstadt, Deutschland</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Webseite:</strong> <span><a href="{% url 'portfolio' %}">My Portfolio</a></span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Staatsangehörigkeit:</strong> <span>Kameruner</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Grad:</strong> <span>Bachelor</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="{% url 'contact'%}">contact me</a></span></li>
+              </ul>
+            </div>
+          </div>
+          <p class="py-3">
+            Seit ich meine ersten Zeilen Code geschrieben habe, habe ich eine echte Liebe für das Lösen komplexer Probleme und das Erstellen nützlicher digitaler Werkzeuge entwickelt. Wenn ich nicht codiere, interessiere ich mich für Videospiele, Fußball, Musik und Schachbrett. Ich bin immer neugierig darauf, neue Technologien zu erlernen und an innovativen Projekten mitzuarbeiten. Mein Ziel ist es, zu technologischen Lösungen beizutragen und gleichzeitig meine Fähigkeiten und meine Kreativität weiterzuentwickeln.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  <!-- </section>/About Section -->
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>coding skills</h2>
+      <div><span class="description-title">Kodierfähigkeiten 💻</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row skills-content skills-animation">
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill"><span>HTML<sub>5</sub></span> <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>CSS<sub>3</sub></span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>JavaScript</span> <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>PHP</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill"><span>Python</span> <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>C/C++</span> <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Java</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Assembler</span> <i class="val">50%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Skills Section -->
+
+  <!-- Knowledge Section -->
+  <section id="skills" class="skills">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>knowledge</h2>
+      <div><span class="description-title">Kenntnisse 🧠</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row skills-content skills-animation">
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill"><span>React</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>MySQL</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Linux-Server</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Docker & Docker Compose</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>MS-Office</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>MariaDB</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Plesk</span> <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill"><span>Git</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>SQLAlchemy</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Django</span> <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Postgressql</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Strato</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>IONOS</span> <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Qt</span> <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Skills Section -->
+  </section><!-- /About Section -->
+{% endblock %}

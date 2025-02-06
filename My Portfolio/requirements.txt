@@ -1,0 +1,5 @@
+Django==4.2
+psycopg2-binary==2.9.6  # Si vous utilisez PostgreSQL
+gunicorn==20.1.0        # Serveur WSGI pour déploiement en production
+whitenoise==5.3.0       # Serveur de fichiers statiques pour déploiement en production
+mysqlclient==2.1.0      # Si vous utilisez MySQL
