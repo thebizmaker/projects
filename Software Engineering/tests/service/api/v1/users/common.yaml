@@ -1,0 +1,24 @@
+---
+
+name: Common
+description: common test information
+
+variables:
+
+  testUsername: "istjaklar"
+
+  new_testUsername: "newUser"
+
+  dough_name: "Whole Grain"
+  dough_price: 1.50
+  dough_description: "Test Dough"
+  dough_stock: 10
+
+  sauce_name: "Tomato"
+  sauce_price: 0.50
+  sauce_description: "Test sauce"
+  sauce_stock: 80
+
+  pizza_name: "Salami"
+  pizza_price: 5
+  pizza_description: "Italian quality"

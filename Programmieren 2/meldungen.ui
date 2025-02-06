@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Meldungen</class>
+ <widget class="QWidget" name="Meldungen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>433</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fehlerhafte Buchungen</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Graphic_Elements.qrc">
+    <normaloff>:/icons/warning.png</normaloff>:/icons/warning.png</iconset>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Neue Zeile</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Neue Spalte</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Neue Spalte</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>Fehlertyp</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>Beschreibung</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="Graphic_Elements.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,64 @@
+# version: '3.9'
+services:
+  broker:
+    image: eclipse-mosquitto:latest
+    container_name: broker
+    ports:
+      - "1883:1883"
+    networks:
+      - app-network
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    environment:
+      - WORKER_PORT=12345
+      - CONTAINER_NAME=${HOSTNAME}
+    volumes:
+      - C:\Users\Dester\Desktop\VS\group_d_2\data\http_rtts_data.json:/app/data/http_rtts_data.json
+      - /var/run/docker.sock:/var/run/docker.sock
+    stop_signal: SIGTERM
+    networks:
+      - app-network
+    depends_on:
+      - broker
+    deploy:
+      replicas: ${WORKER_COUNT}
+      endpoint_mode: dnsrr # erlaubt es, dass der Controller die Worker direkt ansprechen kann
+    entrypoint:  ["python", "worker.py"]
+
+  controller:
+    build:
+      context: .
+      dockerfile: Dockerfile.controller
+    container_name: controller
+    depends_on:
+      - worker
+    volumes:
+      - C:\Users\Dester\Desktop\VS\group_d_2\udp_rtts.json:/app/data/udp_rtts.json
+    networks:
+      - app-network
+    environment:
+      - WORKER_COUNT=${WORKER_COUNT}
+    entrypoint:  ["python", "controller.py"]
+
+  http_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.http_server
+    container_name: http_server
+    networks:
+      - app-network
+    ports:
+      - "8080:80"
+    environment:
+      - WORKER_COUNT=${WORKER_COUNT}
+    entrypoint:  ["python", "http_server.py"]
+
+networks:
+  app-network:
+    driver: bridge
+

@@ -1,0 +1,458 @@
+/*-------- Body --------*/
+body {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://escale-mezos.fr/wp-content/uploads/2015/09/pizza2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* -------- Header --------*/
+header.section {
+    border-radius: 7px 7px 0 0;
+    background: url('https://pizzariadesucesso.com/wp-content/uploads/2018/05/pizza_R_l5_3.jpg');
+    background-size: cover;
+}
+
+/* -------- Navigation bar --------*/
+nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    /* flex-direction:row; */
+    justify-content:space-around;
+}
+
+nav ul li {
+    margin: 0;
+    width: 25%;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5% 2%;
+    text-decoration: none;
+    width: 96%;
+}
+
+nav ul li a:hover:not(.active) {background-color: #F7AD45;}
+
+nav ul li a.active {background-color: #BB3E00;} /* #04AA6D */
+
+nav {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 60%;
+}
+
+/* -------- Section --------*/
+.section {
+    background-color: rgb(224, 221, 221, 0.8);
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 75%;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4), -5px -5px 7px rgba(0, 0, 0, 0.4);
+}
+
+section hr {
+    width: 85%;
+    border: solid 0.7px black;
+    opacity: 0.2;
+}
+
+/* -------- Wraper --------*/
+.wraper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 5px auto;
+    padding: 5px;
+    /* background-color: rgb(224, 221, 221); */
+}
+
+.item {
+    opacity: 0.9;
+    padding: 0;
+    margin: 0;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.image:hover img {
+    transform: scale(1.1);
+    border-style: none;
+    filter: brightness(70%);
+    cursor: pointer;
+}
+
+/* -------- Footer --------*/
+footer.section {
+    padding: 5px auto;
+    border-radius: 0 0 7px 7px;
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+/*-------- Form --------*/
+form {
+    position: relative;
+}
+
+input[type="text"] {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    background-color: #f9dfbb;
+    outline: 0;
+}
+
+select {
+    width: 75%;
+    grid-area: 2 / 1 / 5 / 2;
+    scroll-behavior: unset;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    background-color: white;
+    height: 200px;
+}
+
+select:focus {
+    background-color: #f9dfbb;
+    outline: 0;
+}
+
+select option {
+    font-size: 20px;
+    padding: 5px;
+    opacity: 0.6;
+    
+}
+
+select option:checked {
+    background-color: white;
+    color: black;
+}
+
+
+form .wraper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 10px;
+    align-items: center;
+}
+
+.button1 { grid-area: 2 / 2 / 3 / 3; }
+.button2 { grid-area: 3 / 2 / 4 / 3; }
+.button3 { grid-area: 4 / 2 / 5 / 3; }
+.div-gpreis { grid-area: 5 / 1 / 6 / 2; }
+
+button {
+    height: 70%;
+    width: 50%;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.2rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    letter-spacing: 0.01rem;
+    font-weight: 700;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #28a745;
+    color: ghostwhite;
+}
+
+button img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    color: white;
+}
+
+.button1, .button2 {
+    background: black;
+}
+
+.button3:disabled, .button3::before {
+    background: #2e8241;
+    color: black;
+}
+
+.button3:disabled {
+    cursor: not-allowed;
+}
+
+.button3:enabled {
+    background: #28a745;
+    color: ghostwhite;
+}
+
+.button1:hover span, .button2:hover span {
+    color: ghostwhite;
+}
+
+button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+button::before,
+button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    text-align: center;
+}
+
+button::before {
+    content: "";
+    background: #333131;
+    width: 120%;
+    left: -10%;
+    text-align: center;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+button:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+div.div-gpreis, .div-gpreis-status {
+    position: relative;
+    background: white;
+    margin: 0 auto;
+    width: 75%;
+    border-radius: 5px;
+    height: 40px;
+}
+
+div.div-gpreis p, .div-gpreis-status p {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.div-gpreis-status {
+    width: 30%;
+}
+
+@media only screen and (max-width: 983px) {
+    button {
+        width: 50%;
+    }
+
+    input[type="text"], select, div.div-gpreis {
+        width: 80%;
+    }
+    select {
+        padding: 5px;
+    }
+    select option {
+        font-size: 16px;
+    }
+
+    .order {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 813px) {
+    .section {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    nav {
+        width: 70%;
+    }
+    .button1, .button2, .button3 {
+        width: 45%;
+        height: 40px;
+    }
+
+    .wraper, #wraper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.div-gpreis {
+        order: 3;
+        width: 45%;
+    }
+
+    .button1 {
+        order: 4;
+    }
+
+    .button2 {
+        order: 5;
+    }
+
+    .button3 {
+        order: 6;
+    }
+
+    input[type="text"], select {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    .button1, .button2, .button3 {
+        margin-left: 37px
+    }
+
+    .button1 {
+        width: 70%;
+    }
+
+    .button2 {
+        width: 60%;
+    }
+
+    .button3 {
+        width: 50%;
+    }
+
+    div.div-gpreis {
+        width: 80%;
+    }
+
+    div.div-gpreis p {
+        left: 27%;
+    }
+
+    #wraper {
+        justify-content: start;
+        align-items: start;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .section {
+        width: 95%;
+    }
+
+    nav ul li a {
+        width: 100%;
+    }
+
+}
+
+/* ------------------- Radio Button ------------------ */
+
+.radio-container:focus {
+    outline: 0;
+    border-color: #F7AD45;
+    box-shadow: 0 0 0 4px #b5c9fc;
+}
+
+.radio-container div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.radio-container input[type="radio"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.radio-container input[type="radio"]:checked + span {
+    box-shadow: 0 0 0 0.0625em #F7AD45;
+    background-color: #F7AD45;
+    z-index: 1;
+    color: black;
+    /* border: 2px solid #BB3E00; */
+}
+
+label span {
+    display: block;
+    cursor: pointer;
+    background-color: #BB3E00;
+    padding: 0.375em .75em;
+    position: relative;
+    margin-left: .0625em;
+    box-shadow: 0 0 0 0.0625em #F7AD45;
+    letter-spacing: .05em;
+    color: ghostwhite;
+    text-align: center;
+    transition: background-color .5s ease;
+}
+
+label:first-child span {
+    border-radius: .375em 0 0 .375em;
+}
+
+label:last-child span {
+    border-radius: 0 .375em .375em 0;
+}
+
+form[name="radio"] {
+    margin-bottom: 15px;
+}

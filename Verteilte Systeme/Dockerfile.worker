@@ -1,0 +1,27 @@
+# Worker Dockerfile
+FROM python:3-slim
+
+WORKDIR /app
+
+# Copy the Worker script and the Thrift file
+COPY worker.py .
+COPY matrix.thrift /app
+
+
+
+# Set default port via environment variable
+ENV WORKER_PORT=12345
+
+# Run the Worker
+CMD ["python", "worker.py"]
+
+RUN apt-get update && apt-get install -y thrift-compiler
+RUN pip install thrift
+RUN pip install --upgrade paho-mqtt
+RUN pip install docker
+
+RUN mkdir -p gen_py_matrix
+
+# # Generate the Thrift files
+RUN thrift --gen py --out gen_py_matrix matrix.thrift
+
