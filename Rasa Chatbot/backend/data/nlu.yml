@@ -1,0 +1,134 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_programming_languages
+  examples: |
+    - What programming languages do you know?
+    - Tell me about different programming languages.
+    - What is Python?
+    - What are the best programming languages for web development?
+    - Can you list some programming languages?
+- intent: ask_web_development
+  examples: |
+    - What is web development?
+    - Tell me about front-end development.
+    - What is the difference between front-end and back-end?
+    - How does React work?
+    - What is the role of a web developer?
+- intent: ask_python_help
+  examples: |
+    - How do I use dictionaries in Python?
+    - Can you explain a for loop in Python?
+    - What are functions used for in Python?
+- intent: ask_java_help
+  examples: |
+    - How do I declare a variable in Java?
+    - Can you explain classes in Java?
+    - How do I create an interface in Java?
+    - How do i declare a variable in Java?
+- intent: ask_javascript_help
+  examples: |
+    - What is a promise in JavaScript?
+    - How do I manipulate the DOM with JavaScript?
+    - Can you explain arrow functions in JavaScript?
+- intent: ask_web_frameworks
+  examples: |
+    - What’s the difference between Flask and Django?
+    - How do I use Express.js?
+    - What’s a front-end framework?
+- intent: ask_algorithms
+  examples: |
+    - What is a sorting algorithm?
+    - Can you explain quicksort?
+    - What is the time complexity of merge sort?
+- intent: ask_docker
+  examples: |
+    - What is Docker and how do I use it?
+    - How do I create a Docker image?
+    - How do I run a container in Docker?
+- intent: ask_database
+  examples: |
+    - What is the difference between SQL and NoSQL databases?
+    - How do I connect to a database in Java?
+    - What is MongoDB used for?

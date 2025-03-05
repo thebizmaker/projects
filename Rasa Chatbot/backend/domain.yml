@@ -1,0 +1,61 @@
+version: '3.1'
+intents:
+- affirm
+- ask_algorithms
+- ask_database
+- ask_docker
+- ask_java_help
+- ask_javascript_help
+- ask_programming_languages
+- ask_python_help
+- ask_web_development
+- ask_web_frameworks
+- bot_challenge
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+entities:
+- language
+- concept
+- tool
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_programming_languages:
+  - text: I know about various programming languages including Python, JavaScript, Java, C++, Ruby, and many more. Each has its own strengths and weaknesses.
+  utter_web_development:
+  - text: Web development involves creating websites and applications for the internet. It can be divided into front-end (client-side) and back-end (server-side) development.
+  utter_ask_python_help:
+  - text: "In Python, dictionaries are data structures that store key-value pairs. You can create one like this: `my_dict = {'key': 'value'}`."
+  utter_ask_java_help:
+  - text: 'In Java, a class is a blueprint for creating objects. Here’s how to declare one: `class MyClass {}`.'
+  utter_ask_javascript_help:
+  - text: 'Promises in JavaScript are used for asynchronous operations. Here’s an example: `let promise = new Promise(function(resolve, reject) { ... });`.'
+  utter_ask_web_frameworks:
+  - text: Flask is a lightweight Python framework, while Django is more feature-rich. Flask is often used for smaller projects.
+  utter_ask_algorithms:
+  - text: Algorithms are step-by-step procedures used for calculations and data processing. Examples include sorting algorithms like quicksort and mergesort.
+  utter_ask_docker:
+  - text: Docker is a platform for developing, shipping, and running applications inside containers. It helps you package your app and all its dependencies.
+  utter_ask_database:
+  - text: SQL is used for relational databases, while NoSQL databases like MongoDB are designed for scalability and flexibility with large datasets.
+actions:
+- utter_ask_java_help
+- utter_ask_python_help
+- action_restart
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: ask about programming languages
+    steps:
+      - intent: ask_programming_languages
+      - action: utter_programming_languages
+
+  - story: ask about web development
+    steps:
+      - intent: ask_web_development
+      - action: utter_web_development
+
+  - story: Ask for Python help
+    steps:
+      - intent: ask_python_help
+      - action: utter_ask_python_help
+
+  - story: Ask for Java help
+    steps:
+      - intent: ask_java_help
+      - action: utter_ask_java_help
+
+  - story: Ask for JavaScript help
+    steps:
+      - intent: ask_javascript_help
+      - action: utter_ask_javascript_help
+
+  - story: Ask for Web Frameworks
+    steps:
+      - intent: ask_web_frameworks
+      - action: utter_ask_web_frameworks
+
+  - story: Ask for Algorithms
+    steps:
+      - intent: ask_algorithms
+      - action: utter_ask_algorithms
+
+  - story: Ask for Docker help
+    steps:
+      - intent: ask_docker
+      - action: utter_ask_docker
+
+  - story: Ask for Database help
+    steps:
+      - intent: ask_database
+      - action: utter_ask_database
+  - story: interactive_story_1
+    steps:
+    - intent: ask_python_help
+    - action: utter_ask_python_help
+    - intent: ask_java_help
+    - action: utter_ask_java_help
