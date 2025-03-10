@@ -1,0 +1,27 @@
+# version: '3.8'
+services:
+  backend:
+    build: ./chatbot
+    networks:
+      - private_network
+    environment:
+      TZ: "Europe/Berlin"
+    container_name: chatbot-backend
+    ports:
+      - "8081:8080"
+
+  frontend:
+    build: ./chatbot-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - private_network
+    depends_on:
+      - backend
+    container_name: chatbot-frontend
+    environment:
+      - VITE_API_URL=
+
+networks:
+  private_network:
+    driver: bridge
